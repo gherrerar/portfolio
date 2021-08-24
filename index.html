@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Gabriel Herrera - Portfolio</title>
+</head>
+
+<body>
+    <div class="logo home">
+        <svg id="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227.21 120.69">
+            <path d="M216.12,238.06h15.64v44.49A60.59,60.59,0,0,1,212,293.31a73.65,73.65,0,0,1-23.46,3.75,63.79,63.79,0,0,1-31.13-7.58,56.12,56.12,0,0,1-21.76-20.86,60.72,60.72,0,0,1,0-59.9,55.37,55.37,0,0,1,21.84-20.86,65.21,65.21,0,0,1,31.37-7.49,66.08,66.08,0,0,1,24.85,4.48,50.65,50.65,0,0,1,19,13.12l-10.1,10.1a46,46,0,0,0-33.09-13.2,48.13,48.13,0,0,0-23.38,5.63A41.16,41.16,0,0,0,150,216.14a46,46,0,0,0,0,45,41.79,41.79,0,0,0,16.22,15.73,47.3,47.3,0,0,0,23.22,5.7q15.31,0,26.73-7.33Z" transform="translate(-125.79 -178.37)"/>
+            <path d="M351,181.67V295.75H334.7V244.91H269.19v50.84h-16.3V181.67h16.3v49.06H334.7V181.67Z" transform="translate(-125.79 -178.37)"/>
+        </svg>
+    </div>
+
+    <nav class="navbar home">
+        <ul class="main-nav">
+            <li><a class="nav-link selected" href="" data-text="Início">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+            </li>
+            <li><a class="nav-link" href="projetos/projetos.html" data-text="Projetos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li><a class="nav-link" href="sobre.html" data-text="Sobre">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            const options = {
+                time: '0.5s',
+                backgroundColor: 'rgba(245, 245, 245, 1)',
+                label: '🌓',
+            }
+
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
