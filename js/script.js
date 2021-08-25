@@ -4,8 +4,11 @@ $(function(){
 
     //Index como Link anterior ao atual
     let prevURL = document.referrer
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    console.log(page)
     console.log(prevURL)
-    if (prevURL.endsWith("index.html")) {
+    if (prevURL.endsWith("index.html") || page == "index.html") {
         setTimeout(function(){
             $(navbar).css({
                 transition: "all calc(var(--transition-speed) * 2) ease-in-out",
@@ -13,6 +16,13 @@ $(function(){
                 opacity: "1"
             })
         }, 1900)
+        setTimeout(()=> {
+            $(pageAll).css({
+                transition: "all var(--transition-speed) ease-in-out",
+                transform: "translateX(0)",
+                opacity: "1"
+            })
+        }, 200)
     }
     //Link anterior ao atual diferente do Index
     else {

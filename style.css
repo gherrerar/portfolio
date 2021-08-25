@@ -397,6 +397,7 @@ section.hero h1 {
     height: 15rem;
     transform: rotate(43deg);
     background: linear-gradient(180deg, black , transparent 80%);
+    pointer-events: none;
     z-index: -1;
 }
 .fa-times {
