@@ -44,6 +44,8 @@ body {
     position: relative;
     display: flex;
     min-height: 100vh;
+    transform: translateX(-8rem);
+    opacity: 0;
 }
 
 img {
@@ -150,7 +152,9 @@ a {
 .nav-link {
     padding-top: 1rem;
     display: inline-block;
+    width: 5rem;
     height: 100%;
+    text-align: center;
     color: rgba(0, 0, 0, 1);
     opacity: .5;
     transition: opacity var(--transition-speed);
@@ -164,6 +168,22 @@ a {
 :is(.navbar, .navbar.home) .selected {
     position: relative;
     opacity: 1;
+}
+
+.navbar:not(.home) .nav-link.selected.pop::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: pop calc(var(--transition-speed) * 1.5) ease-in-out forwards;
+}
+@keyframes pop {
+    to {width: 10rem; height: 10rem; box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.5);}
 }
 
 /*Home*/
@@ -180,8 +200,14 @@ a {
     background-color: rgba(0, 0, 0, 1);
 }
 .nav-link > svg {
-    width: 5rem;
+    width: 4.6rem;
     pointer-events: none;
+    transform: translateY(0);
+    transition: all calc(var(--transition-speed)) ease-in-out;
+}
+.nav-link.selected > svg {
+    /* width: 5rem; */
+    transform: translateY(-1rem) scale(1.1);
 }
 
 /*Projects / About*/
@@ -191,12 +217,21 @@ a {
     bottom: -4.6rem;
     width: 20rem;
     transform: rotate(180deg);
-    transition: all var(--transition-speed * 1.5) cubic-bezier(.67,0,.32,1);
+    transition: all calc(var(--transition-speed) * 1.5) cubic-bezier(.79,-0.36,.21,1.4);
     z-index: -1;
 }
 #underwave {
     width: 100%;
     fill: rgb(80, 226, 134);
+}
+
+.main-nav span::after {
+    content: '';
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: rotate(180deg) translateX(50%);
+    font-size: 2rem;
 }
 
 
@@ -238,7 +273,7 @@ section.hero h1 {
 }
 .subj-cell img {
     width: 100%;
-    aspect-ratio: inherit;
+    height: 100%;
     object-fit: cover;
 }
 
