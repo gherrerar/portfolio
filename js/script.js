@@ -1,6 +1,7 @@
 $(function(){
     let navbar = $(".navbar")
     let pageAll = $(navbar).nextAll(":not(script)")
+    let wholePage = $("body")
 
     //Index como Link anterior ao atual
     let prevURL = document.referrer
@@ -50,7 +51,6 @@ $(function(){
         e.preventDefault()
         var href = $(this).attr("href")
         var casesURL = ["index", "projetos", "sobre"]
-        let str = ''
 
         var current = $(navs).filter(".selected")
         current.removeClass("selected")
@@ -70,7 +70,7 @@ $(function(){
 
         for (let i = 0; i < casesURL.length; i++) {
 
-            if (href.indexOf(casesURL[i]) > -1) {
+            if (href.indexOf(casesURL[i]) > -1 && !($(navs).parents(".navbar").hasClass("home"))) {
                 $(pageAll).css({
                     transform: "translateX(-8rem)",
                     opacity: "0"
@@ -80,7 +80,30 @@ $(function(){
                 }, 500)
             }
         }
-        
+        if (href.indexOf(casesURL[0]) > -1) {
+            $(wholePage).css({
+                transition: "opacity var(--transition-speed) ease-in-out",
+                opacity: "0"
+            })
+        }
+        var str = page.split(".")
+        if (casesURL[0] == str[0]) {
+            setTimeout(()=> {
+                $(navbar).css({
+                    transform: "translateY(-8rem)",
+                    opacity: "0"
+                })
+            }, 200)
+            setTimeout(()=> {
+                $(wholePage).css({
+                    transition: "opacity var(--transition-speed) ease-in-out",
+                    opacity: "0"
+                })
+            }, 400)
+            setTimeout(()=> {
+                window.location.replace(href)
+            }, 800)
+        }
     })
 
     $(window).on("resize", function(){

@@ -33,7 +33,7 @@ body {
 .darkmode-layer--button {
     width: 5.9rem !important;
     height: 5.9rem !important;
-    z-index: 1000;
+    z-index: 999;
 }
 .darkmode-layer--simple {
     width: 100% !important;
@@ -257,6 +257,7 @@ section.hero h1 {
     padding: 10rem 20vw;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 }
 .subj-grid {
     display: grid;
@@ -281,6 +282,7 @@ section.hero h1 {
 .container.prjt,
 .container.social {
     padding: 10rem 8vw;
+    z-index: 999;
 }
 
 .prjt-grid,
@@ -304,7 +306,14 @@ section.hero h1 {
     padding: 0 4vw;
     max-width: 50%;
     text-align: center;
+    transition: color var(--transition-speed) ease-in-out;
 }
+body.darkmode--activated 
+:is(.prjt-content, .scl-content) {
+    color: var(--color-gray);
+}
+
+
 :is(.prjt-content, .scl-content) h2 {
     margin-bottom: 2rem;
     font-weight: 900;
