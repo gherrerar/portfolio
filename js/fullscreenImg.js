@@ -76,13 +76,13 @@ $(function(){
                     'max-width': "calc(100% - 4rem)",
                     'max-height': "calc(100% - 4rem)",
                     opacity: 1,
-                    'box-shadow': "0 0 32px -4px rgba(0, 0, 0, 0.7)"
+                    'filter': "drop-shadow(0 0 32px rgba(0, 0, 0, 0.7))"
                 })
             }, 300)
         })
         
         var closeBtn = document.createElement("div")
-        var closeIcon = "<i class='fas fa-times'></i>"
+        var closeIcon = "<img src='../img/x.svg' alt=''>"
         $(closeBtn).addClass("close-btn")
         $(closeBtn).append(closeIcon)
         $(closeBtn).css("opacity")
@@ -113,7 +113,7 @@ $(function(){
                     'max-width': "calc(100% - 4rem)",
                     'max-height': "calc(100% - 4rem)",
                     opacity: 1,
-                    'box-shadow': "0 0 32px -4px rgba(0, 0, 0, 0.7)"
+                    'filter': "drop-shadow(0 0 32px rgba(0, 0, 0, 0.7))"
                 })
             }, 300)
         })
