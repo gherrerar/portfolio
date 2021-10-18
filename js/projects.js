@@ -54,14 +54,18 @@ $(function(){
     function update() {
         const newScroll = $(window).scrollTop()
 	    const diff = newScroll - currentScroll
-	    const speed = diff * 0.35
+	    const speed = Math.abs(diff) * 0.3
         
-	    $(parent).css("transform", `skewX(${ speed }deg)`)
+	    // $(parent).css("transform", `skewX(${ speed }deg)`)
+        $(parent).css("filter", `blur(${ speed }px)`)
+        console.log($(parent).css("filter"))
+        console.log("1: " + currentScroll)
+        console.log("2: " + newScroll)
+        console.log("diff: " + diff)
 
 	    currentScroll = newScroll;
 	    requestAnimationFrame(update);
     }
-    update()
 
     //Movimento do slider com o scroll
     $(window).scroll(function() {
@@ -73,9 +77,10 @@ $(function(){
 
         var translate = (scrollPercent * ($(document).width()/2 - parent.width()))
         $(parent).css({
-            'margin-left': `${translate/* + 30*/}px`
+            'transform': `translate3d(${translate/* + 30*/}px, 0, 0)`
         })
     })
+    update()
 
     
     //Clique nas células das áreas
@@ -108,7 +113,7 @@ $(function(){
     var casesURL = ["ciencias-natureza", "ciencias-humanas", "linguagens", "matematica", "tecnico"]
     var str = page.split(".")
     for (let i = 0; i < casesURL.length; i++)
-    if (prevURL.endsWith("projetos.html") && str[0] == casesURL[i]) {
+    if (prevURL.endsWith("projetos.html") || str[0] == casesURL[i]) {
         //Devem ser satisfeitas ambas as condições (&&)
 
         $("body").append("<div class='gooey-container'><div class='level-wave reverse'></div></div>")

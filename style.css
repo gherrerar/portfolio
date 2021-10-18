@@ -253,9 +253,10 @@ section.hero {
 section.hero:not(:is(.prjt, .social))::before, section.hero:not(:is(.prjt, .social))::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 50%;
     width: 30vw;
-    height: 100%;
+    height: 110%;
+    transform: translateY(-50%);
     --color: var(--color-gray);
     transition: all var(--transition-speed) ease-in-out;
 }
@@ -288,13 +289,15 @@ section.hero h1 {
 .prjt-slider {
     position: absolute;
     display: flex;
+    max-height: 100%;
     z-index: -1;
     transition: all var(--transition-speed);
 }
 .prjt-view {
     position: relative;
     width: 40rem;
-    height: 60rem;
+    height: auto;
+    max-height: 100%;
 }
 .prjt-view:not(:first-child) {
     margin-left: 8rem;
@@ -788,6 +791,19 @@ body.darkmode--activated .container.hero.prjt h1 {
 
 
 /*About*/
+
+.tk-blob {
+    position: absolute !important;
+    width: 30vw;
+    --time: calc(20s * var(--order));
+    --amount: 10;
+    --fill: rgb(80, 226, 134);
+    opacity: calc(0.2 * var(--order));
+}
+.tk-blob > svg {
+    width: 100%;
+}
+
 
 .scl-icons {
     display: flex;
