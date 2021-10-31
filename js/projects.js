@@ -58,10 +58,6 @@ $(function(){
         
 	    // $(parent).css("transform", `skewX(${ speed }deg)`)
         $(parent).css("filter", `blur(${ speed }px)`)
-        console.log($(parent).css("filter"))
-        console.log("1: " + currentScroll)
-        console.log("2: " + newScroll)
-        console.log("diff: " + diff)
 
 	    currentScroll = newScroll;
 	    requestAnimationFrame(update);
